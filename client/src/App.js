@@ -63,6 +63,11 @@ function App() {
   const [error, setError] = useState(null);
   const [language, setLanguage] = useState('en');
   const [country, setCountry] = useState('in');
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark-mode', darkMode);
+  }, [darkMode]);
 
   useEffect(() => {
     setLoading(true);
@@ -96,6 +101,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <div className="toggle-corner-wrapper">
+          <button
+            className={`dark-mode-toggle${darkMode ? ' active' : ''}`}
+            onClick={() => setDarkMode((prev) => !prev)}
+            aria-label="Toggle dark mode"
+          >
+            {darkMode ? '🌙 Dark' : '☀️ Light'}
+          </button>
+        </div>
         <h1>HEADLINE <span>EXPO</span></h1>
         <div className="controls">
           <div className="control-group">

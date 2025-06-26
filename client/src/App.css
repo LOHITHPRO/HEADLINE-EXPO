@@ -248,3 +248,102 @@ main {
     background-color: var(--header-end-color);
     color: white;
 }
+
+.dark-mode {
+  --primary-text: #f7fafc;
+  --secondary-text: #cbd5e1;
+  --background-color: #181a1b;
+  --header-start-color: #232b3a;
+  --header-end-color: #1a202c;
+  --card-background: #232b3a;
+  --accent-color: #ffd166;
+  --accent-hover-color: #ffe066;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode body {
+  background-color: var(--background-color);
+  color: var(--primary-text);
+}
+
+.dark-mode .App-header {
+  color: var(--primary-text);
+}
+
+.dark-mode .article h2 a {
+  color: var(--primary-text);
+}
+
+.dark-mode .article h2 a:hover {
+  color: var(--accent-color);
+}
+
+.dark-mode .article {
+  background: var(--card-background);
+  box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.dark-mode .article p,
+.dark-mode .article-source {
+  color: var(--secondary-text);
+}
+
+.dark-mode .controls select,
+.dark-mode .controls select option {
+  background-color: #232b3a;
+  color: var(--primary-text);
+  border: 1px solid #444;
+}
+
+.dark-mode .controls select:hover {
+  background-color: #1a202c;
+  border-color: #ffd166;
+}
+
+.dark-mode .error-message {
+  color: #ffd166;
+  background-color: #232b3a;
+  border: 1px solid #ffd166;
+}
+
+.dark-mode .loader {
+  border: 8px solid #232b3a;
+  border-top: 8px solid var(--accent-color);
+}
+
+.toggle-corner-wrapper {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  z-index: 10;
+}
+
+.dark-mode-toggle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  background: linear-gradient(135deg, var(--accent-color) 60%, var(--header-end-color) 100%);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+  outline: none;
+}
+.dark-mode-toggle:hover, .dark-mode-toggle:focus {
+  background: linear-gradient(135deg, var(--accent-hover-color) 60%, var(--header-end-color) 100%);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  transform: scale(1.07);
+}
+.dark-mode .dark-mode-toggle {
+  background: linear-gradient(135deg, #232b3a 60%, var(--accent-color) 100%);
+  color: #ffd166;
+}
+.dark-mode .dark-mode-toggle:hover, .dark-mode .dark-mode-toggle:focus {
+  background: linear-gradient(135deg, #1a202c 60%, var(--accent-hover-color) 100%);
+  color: #ffe066;
+}
