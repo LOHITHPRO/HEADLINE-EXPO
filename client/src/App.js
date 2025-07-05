@@ -72,7 +72,7 @@ function App() {
   useEffect(() => {
     setLoading(true);
     setError(null);
-    fetch(`http://localhost:5000/api/news?lang=${language}&country=${country}`)
+    fetch(`/api/news?lang=${language}&country=${country}`)
       .then((res) => {
         if (!res.ok) {
           return res.text().then(text => { throw new Error(text || 'Network response was not ok') });
